@@ -51,16 +51,15 @@ public class QuizService {
         Optional<Quiz> q = Optional.of(quizDao.findById(id).get());
         List<Question> questions = q.get().getQuestions();
         Integer count = 0;
+        int i = 0;
         for(Response r:responses){
             if(r.getResponse().equals(questions.get(i).getAnswer())){
                 count++;
             }
+            i++;
         }
 
         return new ResponseEntity<>(count,HttpStatus.OK);
 
-        for(Response r:responses){
-            if(r.)
-        }
     }
 }
